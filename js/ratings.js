@@ -15,13 +15,11 @@ function collect_ratings(){
 
         let idStrip= element.id;
         
-        idStrip = idStrip.replace('star', '');
-
-        rating = parseInt(idStrip);
+        rating = parseInt(idStrip.replace('star', ''));
 
         ratings.count = ratings.count + parseInt(element.value)
 
-        ratings.sum = ratings.sum + parseInt(element.value) * parseInt(idStrip);
+        ratings.sum = ratings.sum + parseInt(element.value) * rating;
 
 
     });
@@ -44,8 +42,8 @@ document.addEventListener("change", function(){
 
     ratings = collect_ratings();
 
-    let output = document.getElementById("average");
+    let average = document.getElementById("average");
 
-    output.value = ratings.average.toFixed(2);
+    average.value = ratings.average.toFixed(2);
 
 });
