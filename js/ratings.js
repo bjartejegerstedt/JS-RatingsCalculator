@@ -1,7 +1,7 @@
-function collect_ratings(){
+const collect_ratings= () => {
 
     let rating = 0;
-    let element = 0;
+ //   let element = 0;
 
     let ratings = {
         count: 0,
@@ -11,11 +11,9 @@ function collect_ratings(){
 
     const elements = document.querySelectorAll('.rating');
 
-    elements.forEach(function(element) {
-
-        let idStrip= element.id;
+    elements.forEach(element => {
         
-        rating = parseInt(idStrip.replace('star', ''));
+        rating = parseInt(element.id.replace('star', ''));
 
         ratings.count += parseInt(element.value)
 
@@ -34,12 +32,11 @@ return ratings;
     
 };
 
-document.addEventListener("change", function(){
+document.addEventListener("change", () => {
 
-    ratings = collect_ratings();
+    const ratings = collect_ratings();
 
-    let average = document.getElementById("average");
+    document.querySelector('#average').value = ratings.average.toFixed(2);
 
-    average.value = ratings.average.toFixed(2);
 
 });
