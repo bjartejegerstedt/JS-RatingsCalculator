@@ -24,13 +24,9 @@ function collect_ratings(){
 
     });
 
-if (ratings.count === 0){
-
-    ratings.average = 0;
-
-} else {
-
-    ratings.average = ratings.sum / ratings.count;
+if (ratings.count !== 0){
+    
+ratings.average = ratings.sum / ratings.count;
 
 };
 
