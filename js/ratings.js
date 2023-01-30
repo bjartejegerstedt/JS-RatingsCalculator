@@ -17,9 +17,9 @@ function collect_ratings(){
         
         rating = parseInt(idStrip.replace('star', ''));
 
-        ratings.count = ratings.count + parseInt(element.value)
+        ratings.count += parseInt(element.value)
 
-        ratings.sum = ratings.sum + parseInt(element.value) * rating;
+        ratings.sum += parseInt(element.value) * rating;
 
 
     });
